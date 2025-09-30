@@ -6,6 +6,39 @@
 #  a,b,c=input("enter the number").split()
 ##  it is use to take multiple input in same line
 
+# remove the extra space from left and right side we use strip()
+
+# print(value,sep=' ',end='\n') 
+
+# ******************comment
+# for single line comment we use #
+#  for multi line we use """ comment statement """
+
+# ***************** what is literals
+# Literals in Python are fixed values written directly in the code that represent constant data. They are used to define data that does not change during the execution of a program. Python supports several types of literals, each representing different kinds of data.
+
+# numeric literals
+# float
+# integer
+# complex  10+2j    /// for complex we only use j for imaginary number
+# a=10+12j
+# print(a.real)    ->10.0
+# print(a.imag)    ->12.0
+
+
+# Boolean literals
+# True or False
+
+# ******* type() fucntion is used to check the type of variable but it give same address for a range of -5 to 256 .if the value out of its range then it give different address each times
+# because it save range value in cashe memory and out of range value in other location
+
+#*************** dir() give all property
+
+
+# ******* id() this is used to give the address of any variable
+# a=10
+# print(id(a))
+
 # ********To print in same line******
 print(sum,end=" ")
 
@@ -18,6 +51,11 @@ rounded=round(k,2)
 # exmple->
 rounded=round(2.9858734,2)
 print(rounded)
+
+# a,b,c=map(int,input("number").split())
+# print(a)
+# print(b)
+# print(c)
 
 ## to check the list of keyword
 import keyword
@@ -33,17 +71,32 @@ id(a)
 
 
 ## dir() is a vital function that return all the property and method associated with object
-
 ## operator
-Arithmetic  #-> +,-,*,/,%
+Arithmetic  #-> +,-,*,/,%,//,**(power)
 logical #-> and,or,not
+Identity operator #(is , is not) # it used to check to varibale are asign to same memory 
+a=4
+b=4
+print(a is not b) #false
+print(a is b)  #it will give true
+membership operator #(in,in not)
+a="abes"
+b='e'
+print(b in a) # true  , it check whether b is available in a on not
 relational  # it give answer in boolean form #-> >,<,==,!=,<=,>=
 assignment  #-> =+,=-,=*,=/,
 bitwise #-> &,|,~,^,>>,<<
+
 8<<2 -> 8*2*2-> 32 is answer
 8<<3-> 8*2*2*2-> 64
 
 9>>3 ->9/2*2*2-> 1
+
+# **********
+a=5000
+b=5000
+print(a==b)#true
+print(a is b)#false
 
 # ^ XOR bit operator give the result high if input of high are odd then result is true , if input of high are even then result is false
 identity and membership
@@ -83,6 +136,10 @@ print(text[2:6])  # it will give a sub string from index 2 to 6-1
 # # m=int(len(a)//2)
 # m=int(len(a)/2)
 # print(a[0]+a[m]+a[-1])
+
+# ####   // it is integer division   10//3=3
+####        / it is float division   10/3=3.3
+
 
 ##print three middle character
 
@@ -176,6 +233,24 @@ n=int(input("enter the number n"))
 while(m<=n):
     print(m)
     m=m+1
+
+# while with else condition
+i=0
+while(i<=5):
+    print(i)
+    i=i+1
+else:
+    print("you are out of loop")
+
+
+# for with else condition
+for i in range(1,11):
+    print(i)
+    if(i==5):
+        break
+else:
+    print("U r in else part")
+   
 # ************* average
 m=int(input("enter the number m"))
 n=int(input("enter the number n"))
@@ -337,6 +412,283 @@ else:
 # print("")
 # print(sum)
 # print(avg)
+# ******************** string built in function
+# String built in method
+str="hello"
+a=str.lower()
+b=str.upper()
+c=str.swapcase() # convert upper case to lower case or lower case to upper case
+
+title() # it convert  first character each word to upper case
+split()#  split the string from given separator and return a list od substring
+
+a="ram@shyam@mohan"
+print(a.split('@'))  #['ram', 'shyam', 'mohan']
+
+str1="abes,engineering,college"
+print(str1.split('e'))
+# join() #concatenate any number of string
+a="python"
+b="-".join(a) 
+print(b) #p-y-t-h-o-n
+
+ strip() #return a copy of the string wth leading and trailing white space removed
+
+a=" hello python        "
+print(a.strip()) #hello python
+
+isalnum()# return true if string has alphabet,numbers
+isdecimal()# return true if all character in the string are decimal
+islower()#return true if all character in the string are lower case
+a.find('h') #it will give index of h
+len(a) # give length of string
+
+ord()#return the ASCII value of thr character
+a=ord("A")
+print(a) #67
+
+chr()#print the character associated with ASCII value
+b=chr(67)
+print(b)#A
+
+for i in range(5):
+    a=ord("A")
+    for j in range(i+1):
+        print(chr(a),end=" ")
+        a=a+1
+    print()
+
+A
+A B
+A B C
+A B C D
+A B C D E
+
+
+str="ABESCDEF"
+str1="ate"
+list=[]
+for i in str:
+    list.append(i+str1)
+print(list)
+
+
+a=input("enter the String")
+str=""
+for i in a:
+    if(i!='a'and i!='e' and i!='o' and i!='i' and i!='u'):
+        str=str+i
+        
+print(str)
+
+a=input("enter the String")
+st1=str()
+for i in a:
+    if i in ("aeiouAEIOU"):
+        pass
+    else:
+        st1=st1+i
+        
+print(st1)
+
+
+# *******************string format
+print("{fname} and {sname} play football".format(fname='Bob',sname='Ram'))
+print('hello\'s world')
+print("hello \n you")
+print(16/3)  #5.333333333333333
+print(format(16/3,'.2f')) #5.33
+
+val=10
+print("In Binary {0:b}".format(val))
+# 0 show that index and b is conversion
+
+# ************* List
+k=[1,2,3,4]
+print(k)
+del(k[2]) #del take index to remove the value
+# del(k) # delete the list 
+print(k)
+k.remove(2) # remove take value and remove it first occurrance
+print(k)
+
+l1=["a","b"]
+l1.insert(5,4) #['a', 'b', 4]
+print(l1)
+l1.append(10) #['a', 'b', 4, 10]
+print(l1)
+l2=["sawej",22,"mca"]
+l1.extend(l2) #['a', 'b', 4, 10, 'sawej', 22, 'mca']
+print(l1)
+print(len(l1))
+print(max(k))
+print(min(k))
+l1.pop()#delete last element
+print(l1.count(4))
+k.sort()
+print(k)
+
+
+# list=[]
+# n=int(input("Enter the number of element"))
+# for i in range(n):
+#     a=int(input("Enter the element in List"))
+#     list.append(a)
+# print(list)
+
+
+# list=[[1,2,7],[3,4,8],[5,6,9]]
+# sum=0
+# for i in range(len(list)):
+#     for j in range(len(list[i])):
+#         sum=sum+list[i][j]
+#         print(list[i][j],end=" ")
+#     print()
+# print(sum)
+
+# pow=[]
+# for i in range(10):
+#     pow.append(3**i)
+# pow=[3**i for i in range(10)]
+# print(pow)
+
+
+
+
+# wap to remove duplicate from list
+# wap to count -ve +ve and string type element
+# wap to print all the +ve number in a 
+#wap to print transpose of a mtrix
+# wap to create a flat list from nested list
+# print a reverse order of a nested list
+
+# list=[[1,2,7],[3,4,8],[5,6,9]]
+# sum=0
+# for i in range(len(list)):
+#     for j in range(len(list[i])):
+#         sum=sum+list[i][j]
+#         print(list[i][j],end=" ")
+#     print()
+# print(sum)
+
+# pow=[]
+# for i in range(10):
+#     pow.append(3**i)
+# pow=[3**i for i in range(10)]
+# print(pow)
+
+# even=[x for x in range(10) if x%2==0]
+# print(even)
+
+# n=4
+# for i in range(n,0,-1):
+#     print(" "*(n-i)+"* "*i)
+# for i in range(2,n+1):
+#     print(" "*(n-i)+"* "*i)
+
+
+# for i in range(n):
+#     for j in range(n):
+#         if(i==0 or j==0 or i==n-1 or j==n-1):
+#             print("*",end=" ")
+#         else:
+#             print(" ",end=" ")
+#     print()
+
+# a=1
+# for i in range(n):
+#     for j in range(i+1):
+#         print(a,end=" ")
+#         a=a+1
+#     print()
+
+# t1=(1,2,3,4)
+# t2=(1,3,5,6)
+# if(t1[0]==t2[0]):
+#     print(t1+t2)
+
+# tp1=tuple(input("Enter the tuple").split())
+# tp2=tuple(input("Enter the tuple").split())
+# if(tp1[0]==tp2[0]):
+#     print(tp1+tp2)
+
+# d=dict()
+# print(d)
+# print(type(d))
+
+# d={'name':'harsh','empcode':1209,'subject':'python'}
+# print(d['name'])
+# print(d['subject'])
+
+room={1:'store',2:'kitchen'}
+temp=room[1]
+room[1]=room[2]
+room[2]=temp
+print(room)
+
+
+# ************************
+# dictionery datastucture
+# syntax  dict_variable={key1:val,key2:val2,key3:val3......}
+# d={} #empty dictionery
+
+# key are unique 
+
+# d=dict()
+
+q={1:"a",2:"b",3:"c",'A':34}
+print(q[2]) # b
+print(q['A']) #34
+q['B']=12
+print(q) #{1: 'a', 2: 'b', 3: 'c', 'A': 34, 'B': 12}
+q[2]="hello"
+print(q) #  {1: 'a', 2: 'hello', 3: 'c', 'A': 34, 'B': 12}
+
+# deleting the items
+# q.clear() # clear all entries here q will exist
+# print(q) 3{}
+# del(q) # it will remove the existance of the q from the memory
+# print(q)  #name 'q' is not defined
+
+# to delete the particular key from the dictionery
+# dictioneryName.pop(key,[value is optional])
+print(q.pop(1)) # a
+print(q.pop(12,"hi")) # it will give "hi" if key is not present
+print(q) #{2: 'hello', 3: 'c', 'A': 34, 'B': 12}
+# q.pop(1)
+# print(q) # KeyError: 1
+# dictioneryName.popitem() # it will delete the any random key
+q.popitem()  # it will delete the last key
+print(q)
+a={ 3: 'c',2: 'hello', 4: 34}
+sorted(a.items())  #{3: 'c', 2: 'hello', 4: 34} it not sorting why?
+print(a)
+
+even=[x for x in range(10) if x%2==0]
+print(even)
+
+ ************ sequence (string literals)***************
+# in python a sequence is an ordered collection of items,where each item can be accessed by its position or index within the collection.
+# element maintain their order
+message="hello world"
+key features
+# indexing:accessing the individual element using integer index
+# sliceong:extration a subsequnce from a larger sequence by using ":" colon
+# iteration:looping though the element of sequence
+# membership testing: checking if the element exist within a sequence using the in operator
+# concatenation:combining two sequnce of the same type using + operator
+# repetition:Repeating a sequnce multiple times using the * operator
+string can be defined by 3 ways
+str=''
+str1=""
+str2=str()  #string class
+str3=str(123)->"123"
+str4=str(23.5)->"23"
+str5=str("hi")->"hi" 
+
+positive index start from left to right
+negative index start from right to left
+
 
 #************** Fibonacci series upto n terms
 
@@ -751,5 +1103,41 @@ num(1,2,3,4,5) #1 2 3 4 5
 
 # *********** type of variable
 # global 
-# logcal
+# local
 # non local
+
+
+
+# ***************** Lambda function 
+
+increament=lambda x:x+5
+print(increament(5))
+
+add=lambda x,y:x+y
+print(add(5,6))
+
+multi=lambda x,y,z:x*y*z
+print(multi(5,6,3))
+
+# *************higher order function 
+
+def fun1(a):
+    return a
+
+def fun2(fun):
+    a=10
+    return fun(a)
+
+print(fun2(fun1))
+
+# fun1 is first class function
+# fun2 is higher order function
+
+def fun3(x,y):
+    return x+y
+
+def fun4(fun,x,y):
+    return fun(x,y)
+
+print(fun4(fun3,10,30))
+
