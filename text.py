@@ -1,38 +1,46 @@
-# dic={1:"a",2:"b",3:{1:"a",2:"b"}}
-# for i in dic.items():
+
+# set****************
+# a set is another data collection data type in python ,which store unique element in an unordered way
+# Every element ins set are is unique and immutable
+# set items can not be access using indexes
+
+# create empty set  
+s1=set()
+# print(s1) #set()
+s1={1,10,2,34,23,2,3,7,4,5,6,1,2,3,4,5,1}
+print(s1) #{1, 2, 3, 4, 5, 6}
+# for i in s1:
 #     print(i)
-# for i in dic.values():
-#     print(i)
-# for i in dic.keys():
-#     print(i)
-# dic2=dic
-# dic3=dic.copy()
-# print(id(dic)==id(dic2))
-# print(id(dic)==id(dic3))
 
+s2=set("ABESEC")
+print(s2)
+# print(s2[0]) #TypeError: 'set' object is not subscriptable
 
-# key=(1,2,3,4)
-# values='xyz'
-# sqr={}
-# sqr=sqr.fromkeys(key,values)
-# #sqr.update(sqr.fromkeys(key,values))
-# print(sqr)
+# copy method provide the a fresh with different memory location
+s3=s2.copy()
+print(s3)
 
-# std={'name':'bob','age':24}
-# print(std.get('name'))
-# print(std.get('gender'))
-# print(std.get('gender','M'))
+# by copy() method memory location will be different
+print(id(s2))
+print(id(s3))
 
-# a={1:2,2:3,3:4}
-# b={4:5,5:6}
-# a.update(b)
-# print(a)
-# a.pop(2)
-# a.popitem()
-# print(a)
+s4=s2
+# by this memory location will be same
+print(id(s4))
+print(id(s2))
 
-a={'A':100,'B':540,'C':220}
-sum=0
-for i in a.values():
-    sum=sum+i
-print(sum) #860
+# s2.clear() will remove all the element
+
+# s2.add(value) will add one element in set
+
+# s2.update([value1,value2,...]) will add many element in set
+set4=set()
+set4.update([1,2,3,4,5,6])
+print(set4)
+
+prime=set()
+odd=set()
+for i in range(1,51):
+    if(i%2==1):
+        odd.add(i)
+print(odd)

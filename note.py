@@ -635,6 +635,13 @@ print(room)
 # key are unique 
 
 # d=dict()
+dic={}
+for i in range(1,11):
+    dic[i]=i*i*i
+print(dic) #{1: 1, 2: 8, 3: 27, 4: 64, 5: 125, 6: 216, 7: 343, 8: 512, 9: 729, 10: 1000}
+
+d={1:{'a':"apple",'b':"banana"},2:{'c':"cat",'d':"Dubai"},3:{'f':"Fish",'H':"Holiday"}}
+print(d[3]['f']) #fish
 
 q={1:"a",2:"b",3:"c",'A':34}
 print(q[2]) # b
@@ -707,6 +714,48 @@ print(sum) #860
 
 even=[x for x in range(10) if x%2==0]
 print(even)
+
+
+# ************************
+
+# set****************
+# a set is another data collection data type in python ,which store unique element in an unordered way
+# Every element ins set are is unique and immutable
+# set items can not be access using indexes
+
+# create empty set  
+s1=set()
+# print(s1) #set()
+s1={1,10,2,34,23,2,3,7,4,5,6,1,2,3,4,5,1}
+print(s1) #{1, 2, 3, 4, 5, 6}
+# for i in s1:
+#     print(i)
+
+s2=set("ABESEC")
+print(s2)
+# print(s2[0]) #TypeError: 'set' object is not subscriptable
+
+# copy method provide the a fresh with different memory location
+s3=s2.copy()
+print(s3)
+
+# by copy() method memory location will be different
+print(id(s2))
+print(id(s3))
+
+s4=s2
+# by this memory location will be same
+print(id(s4))
+print(id(s2))
+
+# s2.clear() will remove all the element
+
+# s2.add(value) will add one element in set
+
+# s2.update([value1,value2,...]) will add many element in set
+set4=set()
+set4.update([1,2,3,4,5,6])
+print(set4)
 
  ************ sequence (string literals)***************
 # in python a sequence is an ordered collection of items,where each item can be accessed by its position or index within the collection.
